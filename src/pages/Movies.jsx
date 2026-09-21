@@ -12,9 +12,6 @@ export default function Movies() {
   const [selectedShow, setSelectedShow] = useState(null);
   const requestId = useRef(0);
 
-  // Fetch shows whenever the search query changes. TVMaze's two endpoints
-  // return different shapes, so the search response is flattened to match
-  // the plain show objects that /shows already returns.
   useEffect(() => {
     const currentRequest = ++requestId.current;
     const trimmed = query.trim();
